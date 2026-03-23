@@ -1,0 +1,1064 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>6-Step Ecommerce Marketing Plan</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,700;1,9..144,400&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<style>
+:root {
+  --black: #0a0a0a;
+  --white: #ffffff;
+  --gold: #E8A917;
+  --gold-light: #FFF3CC;
+  --gold-pale: #FFFAF0;
+  --cream: #FAF8F3;
+  --ink: #1a1a1a;
+  --muted: #6b6b6b;
+  --border: #E8E4DC;
+  --green: #1a7a4a;
+  --green-light: #e6f4ed;
+  --red-light: #fff0f0;
+  --red: #c0392b;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{
+  background:var(--cream);
+  color:var(--ink);
+  font-family:'Outfit',sans-serif;
+  font-size:18px;
+  line-height:1.75;
+  overflow-x:hidden;
+}
+
+/* ===================== HERO ===================== */
+.hero{
+  background:var(--black);
+  min-height:100vh;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  padding:80px 24px 80px;
+  position:relative;
+  overflow:hidden;
+}
+.hero-bg-grid{
+  position:absolute;inset:0;
+  background-image:
+    linear-gradient(rgba(232,169,23,0.06) 1px, transparent 1px),
+    linear-gradient(90deg,rgba(232,169,23,0.06) 1px,transparent 1px);
+  background-size:60px 60px;
+  pointer-events:none;
+}
+.hero-glow{
+  position:absolute;
+  width:700px;height:700px;
+  background:radial-gradient(circle,rgba(232,169,23,0.18) 0%,transparent 65%);
+  top:50%;left:50%;transform:translate(-50%,-50%);
+  pointer-events:none;
+}
+.hero-badge{
+  display:inline-flex;align-items:center;gap:8px;
+  background:rgba(232,169,23,0.15);
+  border:1px solid rgba(232,169,23,0.4);
+  color:var(--gold);
+  font-size:0.8rem;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;
+  padding:8px 20px;border-radius:100px;margin-bottom:32px;
+  opacity:0;animation:fadeUp 0.7s 0.2s forwards;
+}
+.hero-badge::before{content:'★';font-size:0.7rem;}
+.hero-h1{
+  font-family:'Syne',sans-serif;
+  font-size:clamp(3.2rem,8vw,7rem);
+  font-weight:800;
+  line-height:0.95;
+  color:#fff;
+  letter-spacing:-0.03em;
+  max-width:900px;
+  opacity:0;animation:fadeUp 0.8s 0.4s forwards;
+}
+.hero-h1 .gold{color:var(--gold);}
+.hero-h1 .italic{font-family:'Fraunces',serif;font-style:italic;font-weight:400;}
+.hero-desc{
+  margin-top:28px;
+  font-size:1.2rem;
+  color:rgba(255,255,255,0.6);
+  max-width:560px;
+  line-height:1.8;
+  font-weight:300;
+  opacity:0;animation:fadeUp 0.8s 0.6s forwards;
+}
+.hero-steps-grid{
+  display:flex;flex-wrap:wrap;gap:12px;justify-content:center;
+  margin-top:48px;
+  opacity:0;animation:fadeUp 0.8s 0.8s forwards;
+}
+.hero-step-chip{
+  display:flex;align-items:center;gap:10px;
+  background:rgba(255,255,255,0.05);
+  border:1px solid rgba(255,255,255,0.1);
+  color:rgba(255,255,255,0.75);
+  font-size:0.88rem;font-weight:500;
+  padding:10px 20px;border-radius:12px;
+}
+.chip-num{
+  width:24px;height:24px;border-radius:50%;
+  background:var(--gold);color:var(--black);
+  font-size:0.72rem;font-weight:700;
+  display:flex;align-items:center;justify-content:center;
+  flex-shrink:0;
+}
+.hero-arrow{
+  margin-top:60px;
+  display:flex;flex-direction:column;align-items:center;gap:10px;
+  color:rgba(255,255,255,0.3);font-size:0.78rem;letter-spacing:0.15em;text-transform:uppercase;
+  opacity:0;animation:fadeUp 0.8s 1.1s forwards;
+}
+.bounce{animation:bounce 2s 1.5s ease-in-out infinite;}
+@keyframes bounce{0%,100%{transform:translateY(0);}50%{transform:translateY(8px);}}
+
+/* ===================== SECTION LABELS ===================== */
+.section-label{
+  display:inline-flex;align-items:center;gap:10px;
+  font-size:0.75rem;font-weight:600;letter-spacing:0.22em;text-transform:uppercase;
+  color:var(--gold);margin-bottom:16px;
+}
+.section-label::before{content:'';width:28px;height:2px;background:var(--gold);}
+
+/* ===================== INTRO BAND ===================== */
+.intro-band{
+  background:var(--gold);
+  padding:28px 40px;
+  display:flex;align-items:center;justify-content:center;gap:20px;
+  flex-wrap:wrap;
+}
+.intro-band p{
+  font-size:1.05rem;font-weight:600;color:var(--black);text-align:center;
+}
+.intro-band span{font-size:1.4rem;}
+
+/* ===================== STEP SECTIONS ===================== */
+.step-section{
+  padding:100px 0;
+  border-bottom:1px solid var(--border);
+  opacity:0;transform:translateY(50px);
+  transition:opacity 0.8s ease,transform 0.8s ease;
+}
+.step-section.visible{opacity:1;transform:translateY(0);}
+
+.step-section:nth-child(even){background:#fff;}
+.step-section:nth-child(odd){background:var(--cream);}
+
+.step-inner{
+  max-width:1100px;margin:0 auto;padding:0 32px;
+}
+
+/* Step header bar */
+.step-header{
+  display:flex;align-items:center;gap:24px;margin-bottom:52px;
+  flex-wrap:wrap;
+}
+.step-num-badge{
+  width:80px;height:80px;border-radius:20px;
+  background:var(--black);color:var(--gold);
+  font-family:'Syne',sans-serif;font-size:1.8rem;font-weight:800;
+  display:flex;align-items:center;justify-content:center;
+  flex-shrink:0;
+  position:relative;
+}
+.step-num-badge::after{
+  content:'';
+  position:absolute;inset:-4px;border-radius:24px;
+  border:2px solid var(--gold);opacity:0.3;
+}
+.step-header-text{}
+.step-tag{
+  font-size:0.72rem;font-weight:600;letter-spacing:0.2em;text-transform:uppercase;
+  color:var(--gold);margin-bottom:6px;
+}
+.step-title{
+  font-family:'Syne',sans-serif;
+  font-size:clamp(2rem,4vw,3rem);
+  font-weight:800;line-height:1.05;color:var(--black);
+}
+
+/* Two col layout */
+.step-body{
+  display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start;
+}
+.step-body.reverse{direction:rtl;}
+.step-body.reverse > *{direction:ltr;}
+
+/* Icon graphic panel */
+.step-graphic{
+  background:var(--black);
+  border-radius:24px;
+  padding:48px;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  min-height:360px;
+  position:relative;
+  overflow:hidden;
+}
+.step-graphic::before{
+  content:'';position:absolute;inset:0;
+  background:radial-gradient(ellipse at 30% 30%,rgba(232,169,23,0.2),transparent 60%);
+}
+.step-graphic svg{
+  width:100%;max-width:280px;
+  position:relative;z-index:1;
+}
+.step-graphic-label{
+  margin-top:20px;
+  font-size:0.8rem;font-weight:600;letter-spacing:0.15em;text-transform:uppercase;
+  color:rgba(255,255,255,0.4);
+  position:relative;z-index:1;
+}
+
+/* Content side */
+.step-content{}
+.step-intro{
+  font-size:1.15rem;color:var(--muted);line-height:1.85;margin-bottom:32px;
+  font-weight:300;
+}
+
+/* Tasks list */
+.tasks-label{
+  font-size:0.75rem;font-weight:600;letter-spacing:0.2em;text-transform:uppercase;
+  color:var(--black);margin-bottom:16px;display:flex;align-items:center;gap:10px;
+}
+.tasks-label::after{content:'';flex:1;height:1px;background:var(--border);}
+.tasks-list{display:flex;flex-direction:column;gap:12px;margin-bottom:32px;}
+.task-item{
+  display:flex;align-items:flex-start;gap:14px;
+  background:#fff;border:1px solid var(--border);
+  border-radius:12px;padding:16px 18px;
+  font-size:1rem;color:var(--ink);
+  transition:box-shadow 0.2s,transform 0.2s;
+}
+.step-section:nth-child(even) .task-item{background:var(--cream);}
+.task-item:hover{box-shadow:0 4px 20px rgba(0,0,0,0.07);transform:translateX(4px);}
+.task-icon{
+  width:36px;height:36px;border-radius:10px;
+  background:var(--gold-light);
+  display:flex;align-items:center;justify-content:center;
+  font-size:1.1rem;flex-shrink:0;margin-top:2px;
+}
+.task-text{font-size:0.97rem;line-height:1.55;}
+.task-text strong{display:block;font-weight:600;color:var(--black);margin-bottom:2px;font-size:1rem;}
+.task-text span{color:var(--muted);font-size:0.9rem;}
+
+/* Benefit box */
+.benefit-box{
+  background:linear-gradient(135deg,#fffaf0,#fff8e1);
+  border:2px solid var(--gold);
+  border-radius:16px;padding:24px 26px;margin-bottom:28px;
+}
+.benefit-box-label{
+  font-size:0.72rem;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;
+  color:var(--gold);margin-bottom:10px;display:flex;align-items:center;gap:8px;
+}
+.benefit-box-label::before{content:'💡';}
+.benefit-box p{font-size:1.02rem;color:var(--ink);line-height:1.75;}
+
+/* Store example */
+.store-example{
+  background:var(--black);
+  border-radius:20px;padding:28px;
+  color:#fff;
+  position:relative;overflow:hidden;
+}
+.store-example::before{
+  content:'';position:absolute;
+  top:-40px;right:-40px;
+  width:180px;height:180px;
+  background:radial-gradient(circle,rgba(232,169,23,0.25),transparent 65%);
+}
+.store-example-label{
+  font-size:0.72rem;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;
+  color:var(--gold);margin-bottom:14px;display:flex;align-items:center;gap:8px;
+}
+.store-example-label::before{content:'🏪';}
+.store-name{
+  font-family:'Syne',sans-serif;font-size:1.2rem;font-weight:700;
+  color:#fff;margin-bottom:10px;
+}
+.store-story{font-size:0.95rem;color:rgba(255,255,255,0.7);line-height:1.75;margin-bottom:20px;}
+.store-results{
+  display:flex;gap:12px;flex-wrap:wrap;
+}
+.result-chip{
+  background:rgba(255,255,255,0.07);
+  border:1px solid rgba(232,169,23,0.4);
+  border-radius:100px;
+  padding:7px 16px;
+  font-size:0.85rem;font-weight:600;color:var(--gold);
+  white-space:nowrap;
+}
+
+/* ===================== CTA SECTION ===================== */
+.cta-section{
+  background:var(--black);
+  padding:110px 32px;
+  text-align:center;
+  position:relative;overflow:hidden;
+}
+.cta-section::before{
+  content:'';position:absolute;inset:0;
+  background:
+    radial-gradient(ellipse 80% 60% at 50% 50%,rgba(232,169,23,0.15),transparent 70%);
+}
+.cta-inner{max-width:760px;margin:0 auto;position:relative;z-index:1;}
+.cta-eyebrow{
+  font-size:0.78rem;font-weight:600;letter-spacing:0.25em;text-transform:uppercase;
+  color:var(--gold);margin-bottom:20px;
+}
+.cta-h2{
+  font-family:'Syne',sans-serif;
+  font-size:clamp(2.5rem,6vw,4.5rem);
+  font-weight:800;line-height:1.0;color:#fff;
+  letter-spacing:-0.02em;margin-bottom:24px;
+}
+.cta-h2 em{font-family:'Fraunces',serif;font-style:italic;font-weight:400;color:var(--gold);}
+.cta-desc{
+  font-size:1.15rem;color:rgba(255,255,255,0.55);
+  line-height:1.85;max-width:540px;margin:0 auto 40px;font-weight:300;
+}
+.cta-btn{
+  display:inline-flex;align-items:center;gap:12px;
+  background:var(--gold);color:var(--black);
+  font-family:'Syne',sans-serif;font-size:1rem;font-weight:700;
+  padding:18px 40px;border-radius:100px;
+  text-decoration:none;cursor:pointer;
+  transition:transform 0.2s,box-shadow 0.2s;
+  letter-spacing:0.04em;
+}
+.cta-btn:hover{transform:scale(1.04);box-shadow:0 8px 40px rgba(232,169,23,0.5);}
+.cta-btn-arrow{font-size:1.2rem;transition:transform 0.2s;}
+.cta-btn:hover .cta-btn-arrow{transform:translateX(4px);}
+
+/* Final results section */
+.results-section{
+  padding:100px 32px;
+  background:var(--cream);
+  opacity:0;transform:translateY(40px);
+  transition:opacity 0.8s,transform 0.8s;
+}
+.results-section.visible{opacity:1;transform:translateY(0);}
+.results-inner{max-width:1100px;margin:0 auto;}
+.results-title{
+  font-family:'Syne',sans-serif;
+  font-size:clamp(2.5rem,5vw,4rem);
+  font-weight:800;
+  color:var(--black);
+  text-align:center;
+  margin-bottom:16px;
+}
+.results-sub{
+  text-align:center;font-size:1.1rem;color:var(--muted);
+  max-width:600px;margin:0 auto 64px;line-height:1.8;
+}
+.results-grid{
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px;
+  margin-bottom:60px;
+}
+.result-card{
+  background:#fff;border:1px solid var(--border);
+  border-radius:20px;padding:32px 28px;text-align:center;
+  transition:box-shadow 0.3s,transform 0.3s;
+}
+.result-card:hover{box-shadow:0 12px 40px rgba(0,0,0,0.08);transform:translateY(-4px);}
+.result-icon{font-size:2.4rem;margin-bottom:14px;display:block;}
+.result-num{
+  font-family:'Syne',sans-serif;font-size:2.4rem;font-weight:800;
+  color:var(--black);line-height:1;margin-bottom:6px;
+}
+.result-num span{color:var(--gold);}
+.result-desc{font-size:0.9rem;color:var(--muted);line-height:1.6;}
+
+/* Case study final */
+.case-study-final{
+  background:var(--black);border-radius:28px;
+  padding:52px;display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center;
+}
+.case-left{}
+.case-label{
+  font-size:0.72rem;font-weight:700;letter-spacing:0.22em;text-transform:uppercase;
+  color:var(--gold);margin-bottom:14px;
+}
+.case-title{
+  font-family:'Syne',sans-serif;font-size:1.8rem;font-weight:800;color:#fff;
+  margin-bottom:16px;line-height:1.15;
+}
+.case-story{font-size:1rem;color:rgba(255,255,255,0.65);line-height:1.8;}
+.case-metrics{display:flex;flex-direction:column;gap:16px;}
+.case-metric{
+  background:rgba(255,255,255,0.06);border:1px solid rgba(232,169,23,0.25);
+  border-radius:14px;padding:20px 24px;
+  display:flex;align-items:center;justify-content:space-between;gap:16px;
+}
+.case-metric-val{
+  font-family:'Syne',sans-serif;font-size:2rem;font-weight:800;color:var(--gold);
+}
+.case-metric-label{font-size:0.9rem;color:rgba(255,255,255,0.6);line-height:1.5;}
+
+/* ===================== FOOTER ===================== */
+footer{
+  background:var(--black);padding:48px 32px;
+  text-align:center;border-top:1px solid rgba(255,255,255,0.06);
+}
+footer p{color:rgba(255,255,255,0.3);font-size:0.88rem;line-height:2;}
+footer strong{color:var(--gold);font-weight:600;}
+
+/* ===================== ANIMATIONS ===================== */
+@keyframes fadeUp{from{opacity:0;transform:translateY(28px);}to{opacity:1;transform:translateY(0);}}
+
+/* ===================== RESPONSIVE ===================== */
+@media(max-width:768px){
+  .step-body{grid-template-columns:1fr;}
+  .step-body.reverse{direction:ltr;}
+  .case-study-final{grid-template-columns:1fr;}
+  .step-graphic{min-height:240px;padding:32px;}
+}
+</style>
+</head>
+<body>
+
+<!-- ===== HERO ===== -->
+<section class="hero">
+  <div class="hero-bg-grid"></div>
+  <div class="hero-glow"></div>
+  <div class="hero-badge">Complete Ecommerce Growth System</div>
+  <h1 class="hero-h1">
+    The <span class="gold italic">6-Step</span><br>Marketing Plan<br>That Scales Stores
+  </h1>
+  <p class="hero-desc">A proven, step-by-step marketing system built for ecommerce store owners who want consistent traffic, loyal customers, and real revenue growth.</p>
+  <div class="hero-steps-grid">
+    <div class="hero-step-chip"><span class="chip-num">01</span> Store Performance</div>
+    <div class="hero-step-chip"><span class="chip-num">02</span> Email Marketing</div>
+    <div class="hero-step-chip"><span class="chip-num">03</span> Social Media</div>
+    <div class="hero-step-chip"><span class="chip-num">04</span> Social Shops</div>
+    <div class="hero-step-chip"><span class="chip-num">05</span> Ads Campaign</div>
+    <div class="hero-step-chip"><span class="chip-num">06</span> Results</div>
+  </div>
+  <div class="hero-arrow">
+    <svg class="bounce" width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12l7 7 7-7" stroke="rgba(232,169,23,0.7)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    <span>Scroll to explore each step</span>
+  </div>
+</section>
+
+<!-- INTRO BAND -->
+<div class="intro-band">
+  <span>⚡</span>
+  <p>Each step is designed to build on the last — follow them in order for maximum impact on your store's growth.</p>
+  <span>⚡</span>
+</div>
+
+<!-- ===== STEP 01 ===== -->
+<section class="step-section">
+  <div class="step-inner">
+    <div class="step-header">
+      <div class="step-num-badge">01</div>
+      <div class="step-header-text">
+        <div class="step-tag">Foundation · Step One</div>
+        <h2 class="step-title">Store Performance &amp; SEO</h2>
+      </div>
+    </div>
+    <div class="step-body">
+      <div class="step-graphic">
+        <svg viewBox="0 0 280 240" xmlns="http://www.w3.org/2000/svg">
+          <!-- Browser window -->
+          <rect x="20" y="20" width="240" height="160" rx="12" fill="rgba(255,255,255,0.06)" stroke="rgba(232,169,23,0.4)" stroke-width="1.5"/>
+          <rect x="20" y="20" width="240" height="36" rx="12" fill="rgba(232,169,23,0.12)"/>
+          <circle cx="42" cy="38" r="5" fill="#ff5f57"/>
+          <circle cx="58" cy="38" r="5" fill="#ffbd2e"/>
+          <circle cx="74" cy="38" r="5" fill="#28c840"/>
+          <!-- Search bar -->
+          <rect x="88" y="28" width="140" height="18" rx="9" fill="rgba(255,255,255,0.08)" stroke="rgba(232,169,23,0.3)" stroke-width="1"/>
+          <text x="158" y="40" fill="rgba(255,255,255,0.4)" font-size="9" font-family="monospace" text-anchor="middle">yourstore.com</text>
+          <!-- Content lines -->
+          <rect x="36" y="70" width="100" height="12" rx="4" fill="rgba(232,169,23,0.7)"/>
+          <rect x="36" y="90" width="200" height="8" rx="3" fill="rgba(255,255,255,0.15)"/>
+          <rect x="36" y="104" width="170" height="8" rx="3" fill="rgba(255,255,255,0.1)"/>
+          <rect x="36" y="118" width="140" height="8" rx="3" fill="rgba(255,255,255,0.1)"/>
+          <!-- SEO rank badge -->
+          <rect x="36" y="138" width="60" height="24" rx="8" fill="var(--gold)"/>
+          <text x="66" y="154" fill="#000" font-size="10" font-weight="700" font-family="sans-serif" text-anchor="middle">#1 Rank</text>
+          <!-- Magnifier -->
+          <circle cx="210" cy="155" r="24" fill="none" stroke="rgba(232,169,23,0.5)" stroke-width="2.5"/>
+          <line x1="228" y1="173" x2="244" y2="189" stroke="rgba(232,169,23,0.5)" stroke-width="2.5" stroke-linecap="round"/>
+          <circle cx="210" cy="155" r="14" fill="none" stroke="rgba(232,169,23,0.3)" stroke-width="1.5"/>
+          <!-- Stars -->
+          <text x="40" y="218" fill="var(--gold)" font-size="14">★★★★★</text>
+          <text x="118" y="218" fill="rgba(255,255,255,0.4)" font-size="10" font-family="sans-serif">Google ranking boost</text>
+        </svg>
+        <div class="step-graphic-label">Search Visibility</div>
+      </div>
+      <div class="step-content">
+        <p class="step-intro">Before any marketing works, your store must be technically ready and visible on Google. Without a strong foundation, every dollar you spend on ads and promotions is wasted. This step builds the bedrock.</p>
+
+        <div class="tasks-label">What We Do In This Step</div>
+        <div class="tasks-list">
+          <div class="task-item">
+            <div class="task-icon">🔑</div>
+            <div class="task-text">
+              <strong>Products SEO Optimization</strong>
+              <span>Optimise every product title, meta description, URL slug, and alt text with high-converting keywords so Google sends shoppers directly to your products.</span>
+            </div>
+          </div>
+          <div class="task-item">
+            <div class="task-icon">🔗</div>
+            <div class="task-text">
+              <strong>On-page &amp; Off-page Optimization</strong>
+              <span>Improve internal linking, page load speed, mobile responsiveness, structured data, and build quality backlinks that signal authority to Google.</span>
+            </div>
+          </div>
+          <div class="task-item">
+            <div class="task-icon">🗺️</div>
+            <div class="task-text">
+              <strong>Google Sitemap &amp; Search Console Setup</strong>
+              <span>Submit your sitemap to Google, connect Search Console, fix crawl errors, and track exactly how your store performs in search results every day.</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="benefit-box">
+          <div class="benefit-box-label">Why This Step Is Critical</div>
+          <p>Organic SEO traffic is 100% free and compounds over time. A store with strong SEO keeps getting visitors without paying for each click — it's the only marketing channel that truly pays you back long-term. Stores with optimised SEO typically see 40–200% more organic traffic within 90 days.</p>
+        </div>
+
+        <div class="store-example">
+          <div class="store-example-label">Real Store Example</div>
+          <div class="store-name">GlowSkin Beauty — Skincare Shopify Store</div>
+          <p class="store-story">GlowSkin was getting 120 monthly organic visitors. After optimising all 48 product pages and setting up Search Console, their titles changed from "Face Cream 50ml" to "Hydrating Vitamin C Face Cream for Sensitive Skin." Google began indexing them for 60+ new keywords.</p>
+          <div class="store-results">
+            <span class="result-chip">↑ 340% organic traffic in 90 days</span>
+            <span class="result-chip">Page 1 for 12 keywords</span>
+            <span class="result-chip">+$4,200/mo revenue from SEO</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== STEP 02 ===== -->
+<section class="step-section">
+  <div class="step-inner">
+    <div class="step-header">
+      <div class="step-num-badge">02</div>
+      <div class="step-header-text">
+        <div class="step-tag">Retention · Step Two</div>
+        <h2 class="step-title">Klaviyo Email Marketing</h2>
+      </div>
+    </div>
+    <div class="step-body reverse">
+      <div class="step-content">
+        <p class="step-intro">Email marketing generates an average $42 for every $1 spent — the highest ROI of any marketing channel. Klaviyo plugs directly into Shopify and turns every customer action into an automated revenue opportunity.</p>
+
+        <div class="tasks-label">What We Do In This Step</div>
+        <div class="tasks-list">
+          <div class="task-item">
+            <div class="task-icon">🔌</div>
+            <div class="task-text">
+              <strong>Shopify + Klaviyo Integration</strong>
+              <span>Sync your full product catalogue, order history, and customer segments into Klaviyo so every email is personalised and perfectly timed.</span>
+            </div>
+          </div>
+          <div class="task-item">
+            <div class="task-icon">⚡</div>
+            <div class="task-text">
+              <strong>Email Marketing Flows Design</strong>
+              <span>Build high-converting automated flows: Welcome Series, Abandoned Cart (3-email), Browse Abandonment, Post-Purchase, Win-Back, and VIP sequences.</span>
+            </div>
+          </div>
+          <div class="task-item">
+            <div class="task-icon">🪟</div>
+            <div class="task-text">
+              <strong>Attractive Pop-Up Forms</strong>
+              <span>Design exit-intent and timed popups that offer incentives (10% off, free shipping) to capture emails — growing your list on autopilot 24/7.</span>
+            </div>
+          </div>
+          <div class="task-item">
+            <div class="task-icon">📢</div>
+            <div class="task-text">
+              <strong>Email Campaigns</strong>
+              <span>Send regular promotional campaigns: product launches, seasonal sales, and newsletters that keep your audience engaged and coming back to buy.</span>
+            </div>
+          </div>
+          <div class="task-item">
+            <div class="task-icon">🤖</div>
+            <div class="task-text">
+              <strong>Full Email Automation</strong>
+              <span>Set up behavioural triggers so the right email reaches the right customer at exactly the right moment — without you lifting a finger.</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="benefit-box">
+          <div class="benefit-box-label">Why This Step Is Critical</div>
+          <p>An abandoned cart sequence alone typically recovers 8–15% of lost sales. On a store with $50K monthly revenue, that's $4,000–$7,500 per month in revenue you'd otherwise never see — fully automated. Email is the only channel where you own your audience completely.</p>
+        </div>
+
+        <div class="store-example">
+          <div class="store-example-label">Real Store Example</div>
+          <div class="store-name">StrideKick — Athletic Footwear Store</div>
+          <p class="store-story">StrideKick had zero email flows. After Klaviyo setup with a 3-email abandoned cart sequence and welcome series, their list grew from 400 to 3,800 subscribers in 60 days via a popup offering free shipping.</p>
+          <div class="store-results">
+            <span class="result-chip">↑ 850% email list growth</span>
+            <span class="result-chip">12% cart recovery rate</span>
+            <span class="result-chip">+$6,100/mo automated revenue</span>
+          </div>
+        </div>
+      </div>
+      <div class="step-graphic">
+        <svg viewBox="0 0 280 260" xmlns="http://www.w3.org/2000/svg">
+          <!-- Email envelope -->
+          <rect x="30" y="60" width="220" height="150" rx="14" fill="rgba(255,255,255,0.06)" stroke="rgba(232,169,23,0.4)" stroke-width="1.5"/>
+          <!-- Envelope flap -->
+          <path d="M30 74 L140 140 L250 74" fill="none" stroke="rgba(232,169,23,0.5)" stroke-width="1.5"/>
+          <!-- Email lines -->
+          <rect x="56" y="150" width="100" height="8" rx="3" fill="rgba(232,169,23,0.6)"/>
+          <rect x="56" y="166" width="160" height="6" rx="2" fill="rgba(255,255,255,0.12)"/>
+          <rect x="56" y="178" width="130" height="6" rx="2" fill="rgba(255,255,255,0.08)"/>
+          <!-- KV badge -->
+          <rect x="180" y="148" width="56" height="26" rx="8" fill="var(--gold)"/>
+          <text x="208" y="165" fill="#000" font-size="11" font-weight="800" font-family="sans-serif" text-anchor="middle">KV</text>
+          <!-- Notification bubbles -->
+          <circle cx="60" cy="40" r="18" fill="rgba(232,169,23,0.2)" stroke="rgba(232,169,23,0.5)" stroke-width="1.5"/>
+          <text x="60" y="45" fill="var(--gold)" font-size="12" text-anchor="middle">📧</text>
+          <circle cx="140" cy="28" r="18" fill="rgba(232,169,23,0.2)" stroke="rgba(232,169,23,0.5)" stroke-width="1.5"/>
+          <text x="140" y="33" fill="var(--gold)" font-size="12" text-anchor="middle">⚡</text>
+          <circle cx="220" cy="40" r="18" fill="rgba(232,169,23,0.2)" stroke="rgba(232,169,23,0.5)" stroke-width="1.5"/>
+          <text x="220" y="45" fill="var(--gold)" font-size="12" text-anchor="middle">🤖</text>
+          <!-- Revenue bar -->
+          <text x="140" y="228" fill="rgba(255,255,255,0.3)" font-size="10" font-family="sans-serif" text-anchor="middle">$42 return per $1 spent</text>
+          <rect x="50" y="234" width="180" height="4" rx="2" fill="rgba(255,255,255,0.08)"/>
+          <rect x="50" y="234" width="162" height="4" rx="2" fill="var(--gold)"/>
+        </svg>
+        <div class="step-graphic-label">Email Automation</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== STEP 03 ===== -->
+<section class="step-section">
+  <div class="step-inner">
+    <div class="step-header">
+      <div class="step-num-badge">03</div>
+      <div class="step-header-text">
+        <div class="step-tag">Awareness · Step Three</div>
+        <h2 class="step-title">Social Media Marketing</h2>
+      </div>
+    </div>
+    <div class="step-body">
+      <div class="step-graphic">
+        <svg viewBox="0 0 280 260" xmlns="http://www.w3.org/2000/svg">
+          <!-- Phone -->
+          <rect x="80" y="20" width="120" height="210" rx="20" fill="rgba(255,255,255,0.05)" stroke="rgba(232,169,23,0.4)" stroke-width="1.5"/>
+          <rect x="88" y="34" width="104" height="182" rx="10" fill="rgba(255,255,255,0.03)"/>
+          <!-- Post card -->
+          <rect x="92" y="38" width="96" height="80" rx="6" fill="rgba(232,169,23,0.15)" stroke="rgba(232,169,23,0.3)" stroke-width="1"/>
+          <text x="140" y="86" fill="rgba(232,169,23,0.6)" font-size="28" text-anchor="middle">🛍️</text>
+          <!-- Like/comment row -->
+          <text x="96" y="132" fill="rgba(255,255,255,0.6)" font-size="11" font-family="sans-serif">❤️ 482</text>
+          <text x="148" y="132" fill="rgba(255,255,255,0.4)" font-size="11" font-family="sans-serif">💬 94</text>
+          <!-- Caption lines -->
+          <rect x="96" y="140" width="80" height="6" rx="2" fill="rgba(255,255,255,0.15)"/>
+          <rect x="96" y="152" width="60" height="6" rx="2" fill="rgba(255,255,255,0.1)"/>
+          <!-- Story circles top -->
+          <circle cx="104" cy="175" r="12" fill="none" stroke="var(--gold)" stroke-width="2"/>
+          <circle cx="132" cy="175" r="12" fill="none" stroke="var(--gold)" stroke-width="2"/>
+          <circle cx="160" cy="175" r="12" fill="none" stroke="rgba(255,255,255,0.2)" stroke-width="1.5"/>
+          <text x="104" y="179" fill="rgba(255,255,255,0.4)" font-size="9" text-anchor="middle">▶</text>
+          <text x="132" y="179" fill="rgba(255,255,255,0.4)" font-size="9" text-anchor="middle">▶</text>
+          <!-- Follower count -->
+          <text x="140" y="215" fill="var(--gold)" font-size="11" font-weight="700" font-family="sans-serif" text-anchor="middle">+12.4K Followers</text>
+          <!-- Social icons floating -->
+          <circle cx="30" cy="100" r="22" fill="rgba(232,169,23,0.12)" stroke="rgba(232,169,23,0.3)" stroke-width="1"/>
+          <text x="30" y="106" fill="var(--gold)" font-size="16" text-anchor="middle">📸</text>
+          <circle cx="250" cy="80" r="22" fill="rgba(232,169,23,0.12)" stroke="rgba(232,169,23,0.3)" stroke-width="1"/>
+          <text x="250" y="86" fill="var(--gold)" font-size="16" text-anchor="middle">🎵</text>
+          <circle cx="258" cy="160" r="18" fill="rgba(232,169,23,0.12)" stroke="rgba(232,169,23,0.3)" stroke-width="1"/>
+          <text x="258" y="166" fill="var(--gold)" font-size="12" text-anchor="middle">fb</text>
+        </svg>
+        <div class="step-graphic-label">Social Presence</div>
+      </div>
+      <div class="step-content">
+        <p class="step-intro">Social media is where your brand builds trust, community, and discoverability. With 74% of consumers influenced by social media before buying, an active presence is not optional — it's essential.</p>
+
+        <div class="tasks-label">What We Do In This Step</div>
+        <div class="tasks-list">
+          <div class="task-item">
+            <div class="task-icon">🎨</div>
+            <div class="task-text">
+              <strong>Social Media Page Setup</strong>
+              <span>Optimise all bios, profile photos, highlights, link-in-bio, and cover images across Instagram, TikTok, Facebook, and Pinterest to make a powerful first impression.</span>
+            </div>
+          </div>
+          <div class="task-item">
+            <div class="task-icon">🔗</div>
+            <div class="task-text">
+              <strong>Integration with Shopify</strong>
+              <span>Connect your Shopify store to all social platforms so you can tag products directly in posts — turning every post into a shoppable experience.</span>
+            </div>
+          </div>
+          <div class="task-item">
+            <div class="task-icon">🎬</div>
+            <div class="task-text">
+              <strong>Stunning Content Creation</strong>
+              <span>Produce scroll-stopping visuals, Reels, product videos, and carousel posts using proven content frameworks that generate saves, shares, and clicks.</span>
+            </div>
+          </div>
+          <div class="task-item">
+            <div class="task-icon">📈</div>
+            <div class="task-text">
+              <strong>Social Media Growth Strategy</strong>
+              <span>Hashtag research, posting schedules, collaborations, and Reels strategy to reach new audiences organically without spending on ads.</span>
+            </div>
+          </div>
+          <div class="task-item">
+            <div class="task-icon">💬</div>
+            <div class="task-text">
+              <strong>Followers &amp; Engagement Boost</strong>
+              <span>Build real, authentic engagement through community management, responding to comments, story polls, and UGC campaigns that drive loyalty.</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="benefit-box">
+          <div class="benefit-box-label">Why This Step Is Critical</div>
+          <p>People buy from brands they trust. A consistent, professional social presence builds that trust before a customer ever visits your store. Active social pages also serve as free traffic sources — every viral post can send thousands of visitors directly to your products.</p>
+        </div>
+
+        <div class="store-example">
+          <div class="store-example-label">Real Store Example</div>
+          <div class="store-name">PeakFit Gear — Fitness Accessories Store</div>
+          <p class="store-story">PeakFit had a dormant Instagram with 800 followers. After a complete profile overhaul and consistent 4x/week Reels strategy showing products in use, their content began reaching fitness communities organically.</p>
+          <div class="store-results">
+            <span class="result-chip">800 → 11,200 followers in 90 days</span>
+            <span class="result-chip">↑ 220% Instagram traffic</span>
+            <span class="result-chip">+$3,800/mo from social</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== STEP 04 ===== -->
+<section class="step-section">
+  <div class="step-inner">
+    <div class="step-header">
+      <div class="step-num-badge">04</div>
+      <div class="step-header-text">
+        <div class="step-tag">Reach · Step Four</div>
+        <h2 class="step-title">Google &amp; Social Media Shops</h2>
+      </div>
+    </div>
+    <div class="step-body reverse">
+      <div class="step-content">
+        <p class="step-intro">Get your products listed inside the platforms where 4.9 billion people shop every day — completely free. Google Shopping, Facebook Shop, Instagram Shop, Pinterest Catalog, and TikTok Shop remove the friction between discovery and purchase.</p>
+
+        <div class="tasks-label">What We Do In This Step</div>
+        <div class="tasks-list">
+          <div class="task-item">
+            <div class="task-icon">🔍</div>
+            <div class="task-text">
+              <strong>Google Merchant Center</strong>
+              <span>Upload your full product catalogue to Google Merchant Center so your products appear in Google Shopping tabs, Google Images, and Search — capturing high-intent buyers actively searching for what you sell.</span>
+            </div>
+          </div>
+          <div class="task-item">
+            <div class="task-icon">👥</div>
+            <div class="task-text">
+              <strong>Facebook Shop</strong>
+              <span>Build a complete Facebook Shop with collections and product tags so your 2.9 billion potential buyers can browse and purchase without leaving Facebook.</span>
+            </div>
+          </div>
+          <div class="task-item">
+            <div class="task-icon">📸</div>
+            <div class="task-text">
+              <strong>Instagram Shop</strong>
+              <span>Enable product tags in posts, Reels, and Stories so followers can tap to view and buy in seconds — reducing the steps between inspiration and purchase.</span>
+            </div>
+          </div>
+          <div class="task-item">
+            <div class="task-icon">📌</div>
+            <div class="task-text">
+              <strong>Pinterest Catalog</strong>
+              <span>Sync your Shopify catalogue to Pinterest — the platform where 85% of users make purchases after saving a product pin. Perfect for home, fashion, beauty, and lifestyle brands.</span>
+            </div>
+          </div>
+          <div class="task-item">
+            <div class="task-icon">🎵</div>
+            <div class="task-text">
+              <strong>TikTok Shop</strong>
+              <span>Connect to TikTok Shop — the fastest growing commerce platform where products can go viral overnight. Let creators tag your products in their videos and drive instant sales.</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="benefit-box">
+          <div class="benefit-box-label">Why This Step Is Critical</div>
+          <p>These are all free storefronts with billions of built-in users. A buyer discovering your product on Pinterest can tap "Buy" and check out — without ever visiting your website. Reducing steps between discovery and purchase dramatically increases conversion rates.</p>
+        </div>
+
+        <div class="store-example">
+          <div class="store-example-label">Real Store Example</div>
+          <div class="store-name">HomeNest Decor — Home &amp; Living Store</div>
+          <p class="store-story">HomeNest listed their 180-product catalogue across Google Merchant, Pinterest Catalog, and Instagram Shop. Within 45 days their products appeared in Google Shopping results and Pinterest search for home decor keywords — driving traffic they never paid for.</p>
+          <div class="store-results">
+            <span class="result-chip">+680 monthly sessions free</span>
+            <span class="result-chip">Pinterest became #2 traffic source</span>
+            <span class="result-chip">↑ 38% conversion rate via shop tags</span>
+          </div>
+        </div>
+      </div>
+      <div class="step-graphic">
+        <svg viewBox="0 0 280 260" xmlns="http://www.w3.org/2000/svg">
+          <!-- Central shop icon -->
+          <rect x="100" y="90" width="80" height="80" rx="16" fill="rgba(232,169,23,0.2)" stroke="rgba(232,169,23,0.5)" stroke-width="2"/>
+          <text x="140" y="140" fill="var(--gold)" font-size="32" text-anchor="middle">🛒</text>
+          <!-- Platform bubbles -->
+          <circle cx="50" cy="60" r="30" fill="rgba(255,255,255,0.05)" stroke="rgba(232,169,23,0.3)" stroke-width="1.5"/>
+          <text x="50" y="55" fill="rgba(255,255,255,0.6)" font-size="9" font-family="sans-serif" text-anchor="middle">Google</text>
+          <text x="50" y="68" fill="var(--gold)" font-size="14" text-anchor="middle">🔍</text>
+          <circle cx="230" cy="60" r="30" fill="rgba(255,255,255,0.05)" stroke="rgba(232,169,23,0.3)" stroke-width="1.5"/>
+          <text x="230" y="55" fill="rgba(255,255,255,0.6)" font-size="9" font-family="sans-serif" text-anchor="middle">Facebook</text>
+          <text x="230" y="68" fill="var(--gold)" font-size="14" text-anchor="middle">👥</text>
+          <circle cx="50" cy="190" r="30" fill="rgba(255,255,255,0.05)" stroke="rgba(232,169,23,0.3)" stroke-width="1.5"/>
+          <text x="50" y="185" fill="rgba(255,255,255,0.6)" font-size="9" font-family="sans-serif" text-anchor="middle">Pinterest</text>
+          <text x="50" y="198" fill="var(--gold)" font-size="14" text-anchor="middle">📌</text>
+          <circle cx="230" cy="190" r="30" fill="rgba(255,255,255,0.05)" stroke="rgba(232,169,23,0.3)" stroke-width="1.5"/>
+          <text x="230" y="185" fill="rgba(255,255,255,0.6)" font-size="9" font-family="sans-serif" text-anchor="middle">TikTok</text>
+          <text x="230" y="198" fill="var(--gold)" font-size="14" text-anchor="middle">🎵</text>
+          <!-- Connecting lines -->
+          <line x1="78" y1="72" x2="104" y2="104" stroke="rgba(232,169,23,0.25)" stroke-width="1.5" stroke-dasharray="4 3"/>
+          <line x1="202" y1="72" x2="176" y2="104" stroke="rgba(232,169,23,0.25)" stroke-width="1.5" stroke-dasharray="4 3"/>
+          <line x1="78" y1="178" x2="104" y2="156" stroke="rgba(232,169,23,0.25)" stroke-width="1.5" stroke-dasharray="4 3"/>
+          <line x1="202" y1="178" x2="176" y2="156" stroke="rgba(232,169,23,0.25)" stroke-width="1.5" stroke-dasharray="4 3"/>
+          <!-- Instagram top center -->
+          <circle cx="140" cy="28" r="22" fill="rgba(255,255,255,0.05)" stroke="rgba(232,169,23,0.3)" stroke-width="1.5"/>
+          <text x="140" y="24" fill="rgba(255,255,255,0.6)" font-size="8" font-family="sans-serif" text-anchor="middle">Instagram</text>
+          <text x="140" y="36" fill="var(--gold)" font-size="12" text-anchor="middle">📸</text>
+          <line x1="140" y1="50" x2="140" y2="90" stroke="rgba(232,169,23,0.25)" stroke-width="1.5" stroke-dasharray="4 3"/>
+          <!-- Free label -->
+          <rect x="108" y="186" width="64" height="24" rx="8" fill="rgba(26,122,74,0.3)" stroke="rgba(26,122,74,0.6)" stroke-width="1"/>
+          <text x="140" y="202" fill="#4cdf8a" font-size="10" font-weight="700" font-family="sans-serif" text-anchor="middle">100% FREE</text>
+        </svg>
+        <div class="step-graphic-label">Multi-Platform Commerce</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== STEP 05 ===== -->
+<section class="step-section">
+  <div class="step-inner">
+    <div class="step-header">
+      <div class="step-num-badge">05</div>
+      <div class="step-header-text">
+        <div class="step-tag">Scale · Step Five</div>
+        <h2 class="step-title">Ads Campaign</h2>
+      </div>
+    </div>
+    <div class="step-body">
+      <div class="step-graphic">
+        <svg viewBox="0 0 280 260" xmlns="http://www.w3.org/2000/svg">
+          <!-- Bar chart -->
+          <rect x="30" y="180" width="36" height="60" rx="5" fill="rgba(232,169,23,0.3)" stroke="rgba(232,169,23,0.5)" stroke-width="1.5"/>
+          <rect x="80" y="140" width="36" height="100" rx="5" fill="rgba(232,169,23,0.5)" stroke="rgba(232,169,23,0.5)" stroke-width="1.5"/>
+          <rect x="130" y="100" width="36" height="140" rx="5" fill="rgba(232,169,23,0.7)" stroke="rgba(232,169,23,0.6)" stroke-width="1.5"/>
+          <rect x="180" y="60" width="36" height="180" rx="5" fill="var(--gold)" stroke="rgba(232,169,23,0.8)" stroke-width="1.5"/>
+          <!-- Trend line -->
+          <path d="M48 200 L98 158 L148 118 L198 78" fill="none" stroke="rgba(255,255,255,0.5)" stroke-width="2" stroke-dasharray="5 3"/>
+          <!-- Arrow tip -->
+          <polygon points="198,68 208,82 188,82" fill="rgba(255,255,255,0.5)"/>
+          <!-- Labels -->
+          <text x="48" y="252" fill="rgba(255,255,255,0.4)" font-size="9" font-family="sans-serif" text-anchor="middle">Wk1</text>
+          <text x="98" y="252" fill="rgba(255,255,255,0.4)" font-size="9" font-family="sans-serif" text-anchor="middle">Wk2</text>
+          <text x="148" y="252" fill="rgba(255,255,255,0.4)" font-size="9" font-family="sans-serif" text-anchor="middle">Wk3</text>
+          <text x="198" y="252" fill="rgba(255,255,255,0.4)" font-size="9" font-family="sans-serif" text-anchor="middle">Wk4</text>
+          <!-- Platform tags -->
+          <rect x="30" y="14" width="54" height="22" rx="8" fill="rgba(232,169,23,0.15)" stroke="rgba(232,169,23,0.4)" stroke-width="1"/>
+          <text x="57" y="29" fill="var(--gold)" font-size="9" font-weight="600" font-family="sans-serif" text-anchor="middle">Google Ads</text>
+          <rect x="96" y="14" width="54" height="22" rx="8" fill="rgba(232,169,23,0.15)" stroke="rgba(232,169,23,0.4)" stroke-width="1"/>
+          <text x="123" y="29" fill="var(--gold)" font-size="9" font-weight="600" font-family="sans-serif" text-anchor="middle">Facebook</text>
+          <rect x="162" y="14" width="54" height="22" rx="8" fill="rgba(232,169,23,0.15)" stroke="rgba(232,169,23,0.4)" stroke-width="1"/>
+          <text x="189" y="29" fill="var(--gold)" font-size="9" font-weight="600" font-family="sans-serif" text-anchor="middle">TikTok Ads</text>
+          <!-- ROAS badge -->
+          <rect x="206" y="40" width="60" height="28" rx="10" fill="var(--gold)"/>
+          <text x="236" y="51" fill="#000" font-size="8" font-weight="700" font-family="sans-serif" text-anchor="middle">ROAS</text>
+          <text x="236" y="63" fill="#000" font-size="10" font-weight="800" font-family="sans-serif" text-anchor="middle">4.2x</text>
+        </svg>
+        <div class="step-graphic-label">Paid Ads Performance</div>
+      </div>
+      <div class="step-content">
+        <p class="step-intro">Steps 1–4 built the engine. Now we pour fuel on it. Paid advertising puts your products in front of targeted, ready-to-buy audiences at scale — and because your store is already optimised, every ad dollar converts harder.</p>
+
+        <div class="tasks-label">What We Do In This Step</div>
+        <div class="tasks-list">
+          <div class="task-item">
+            <div class="task-icon">🔍</div>
+            <div class="task-text">
+              <strong>Google Ads (Shopping, Search &amp; Performance Max)</strong>
+              <span>Run Shopping campaigns to appear at the top of Google results, Search campaigns for branded keywords, and Performance Max to capture all Google inventory with AI-powered optimisation.</span>
+            </div>
+          </div>
+          <div class="task-item">
+            <div class="task-icon">👥</div>
+            <div class="task-text">
+              <strong>Facebook Ads</strong>
+              <span>Target interest-based cold audiences and build powerful lookalike audiences from your existing customers — turning your best customers into a template for finding new ones.</span>
+            </div>
+          </div>
+          <div class="task-item">
+            <div class="task-icon">📸</div>
+            <div class="task-text">
+              <strong>Instagram Ads</strong>
+              <span>Run high-converting Story, Reel, and Carousel ads that blend seamlessly into feeds — capturing attention in the first 2 seconds before the scroll.</span>
+            </div>
+          </div>
+          <div class="task-item">
+            <div class="task-icon">🎵</div>
+            <div class="task-text">
+              <strong>TikTok Ads</strong>
+              <span>Short-form video ads that feel native to TikTok, targeting audiences by interest, behaviour, and custom lists — often the cheapest CPM of any platform.</span>
+            </div>
+          </div>
+          <div class="task-item">
+            <div class="task-icon">📌</div>
+            <div class="task-text">
+              <strong>Pinterest Ads</strong>
+              <span>Promoted Pins and catalogue ads targeting users actively searching for products like yours — Pinterest users have 87% higher purchase intent than other social platforms.</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="benefit-box">
+          <div class="benefit-box-label">Why This Step Is Critical</div>
+          <p>Ads without Steps 1–4 in place waste money. Ads with Steps 1–4 in place compound them. Your optimised store converts the clicks, your email flows capture anyone who doesn't buy, and your social proof closes the sale. A well-structured ads strategy regularly achieves 3–6x ROAS.</p>
+        </div>
+
+        <div class="store-example">
+          <div class="store-example-label">Real Store Example</div>
+          <div class="store-name">ThreadCo — Streetwear Clothing Brand</div>
+          <p class="store-story">ThreadCo launched a $20/day Facebook retargeting campaign targeting cart abandoners and past visitors. Because their Klaviyo flows, social proof, and SEO were already in place, the ads found a warm, trust-ready audience that converted at 3.2% — well above the 1% industry average.</p>
+          <div class="store-results">
+            <span class="result-chip">4.1x ROAS in month one</span>
+            <span class="result-chip">3.2% ad conversion rate</span>
+            <span class="result-chip">+$8,200/mo from $600 ad spend</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CTA SECTION ===== -->
+<section class="cta-section">
+  <div class="cta-inner">
+    <p class="cta-eyebrow">Ready to grow your store?</p>
+    <h2 class="cta-h2">This strategy <em>works.</em><br>Let's build it<br>for your store.</h2>
+    <p class="cta-desc">Every step in this plan is proven to drive real, measurable results for ecommerce stores just like yours. The difference between stores that grow and stores that plateau? A system like this one.</p>
+    <a href="#" class="cta-btn">
+      Start Your Marketing Plan
+      <span class="cta-btn-arrow">→</span>
+    </a>
+  </div>
+</section>
+
+<!-- ===== STEP 06 - RESULTS ===== -->
+<section class="results-section">
+  <div class="results-inner">
+    <div class="section-label">Step Six · The Outcome</div>
+    <h2 class="results-title">When All 6 Steps Work Together</h2>
+    <p class="results-sub">The system compounds. SEO brings free traffic. Email captures and converts it. Social builds trust. Shops remove friction. Ads scale what's working. The result is a store that grows while you sleep.</p>
+
+    <div class="results-grid">
+      <div class="result-card">
+        <span class="result-icon">📈</span>
+        <div class="result-num"><span>↑</span> SEO</div>
+        <div class="result-desc">Consistent free organic traffic from Google — growing month over month without ad spend.</div>
+      </div>
+      <div class="result-card">
+        <span class="result-icon">💰</span>
+        <div class="result-num"><span>42x</span></div>
+        <div class="result-desc">Email ROI — $42 returned for every $1 invested into Klaviyo flows and campaigns.</div>
+      </div>
+      <div class="result-card">
+        <span class="result-icon">🛒</span>
+        <div class="result-num"><span>↑</span> CVR</div>
+        <div class="result-desc">Higher store conversion rate as trust signals — social proof, reviews, and brand content — all compound.</div>
+      </div>
+      <div class="result-card">
+        <span class="result-icon">🎯</span>
+        <div class="result-num"><span>4x</span></div>
+        <div class="result-desc">Average ROAS on paid ads when all other steps are in place and working.</div>
+      </div>
+      <div class="result-card">
+        <span class="result-icon">💎</span>
+        <div class="result-num"><span>↑</span> LTV</div>
+        <div class="result-desc">Repeat purchase rate increases as email automation keeps customers engaged after the first buy.</div>
+      </div>
+      <div class="result-card">
+        <span class="result-icon">🚀</span>
+        <div class="result-num"><span>↑</span> Scale</div>
+        <div class="result-desc">A fully automated marketing engine that generates sales across 6 channels simultaneously.</div>
+      </div>
+    </div>
+
+    <!-- FINAL CASE STUDY -->
+    <div class="case-study-final">
+      <div class="case-left">
+        <div class="case-label">Full System Case Study</div>
+        <h3 class="case-title">Fruitful Glow Co. — Natural Beauty Store</h3>
+        <p class="case-story">Fruitful Glow started with no marketing strategy — just a Shopify store and a hope. After implementing all 6 steps over 4 months: SEO optimisation, Klaviyo setup, Instagram growth strategy, Google Merchant integration, and a $25/day Meta ads campaign — their entire marketing ecosystem clicked into place.<br><br>What changed? Everything. Their store went from sporadic sales to consistent daily revenue. Their email list grew to 6,200 subscribers generating automated income. Their Instagram became their #1 traffic driver. Google Shopping started generating 400+ free monthly sessions. And their ads, running on a warm and trust-ready audience, hit 4.8x ROAS from month two onwards.</p>
+      </div>
+      <div class="case-metrics">
+        <div class="case-metric">
+          <div class="case-metric-label">Monthly Revenue<br><small style="opacity:0.5">Before vs After</small></div>
+          <div class="case-metric-val">$2.1K → $18.4K</div>
+        </div>
+        <div class="case-metric">
+          <div class="case-metric-label">Organic Traffic<br><small style="opacity:0.5">Monthly sessions</small></div>
+          <div class="case-metric-val">+420%</div>
+        </div>
+        <div class="case-metric">
+          <div class="case-metric-label">Email Revenue<br><small style="opacity:0.5">Automated monthly</small></div>
+          <div class="case-metric-val">$4,800/mo</div>
+        </div>
+        <div class="case-metric">
+          <div class="case-metric-label">Return on Ad Spend<br><small style="opacity:0.5">Month 2 onward</small></div>
+          <div class="case-metric-val">4.8x ROAS</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p><strong>6-Step Ecommerce Marketing Plan</strong></p>
+  <p>Built for store owners who are serious about growth · Follow the steps in sequence for maximum impact</p>
+</footer>
+
+<script>
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.classList.add('visible');
+      observer.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.08 });
+
+document.querySelectorAll('.step-section, .results-section').forEach(el => observer.observe(el));
+</script>
+</body>
+</html>
